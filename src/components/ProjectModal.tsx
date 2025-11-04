@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { Github, PlayCircle } from "lucide-react"; // nice icons
 
 interface ProjectModalProps {
   project: {
@@ -7,6 +8,8 @@ interface ProjectModalProps {
     description: string;
     tech: string[];
     howItWorks: string;
+    github?: string;
+    video?: string;
   } | null;
   onClose: () => void;
 }
@@ -36,14 +39,17 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           >
             ✕
           </button>
+
           <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
           <p className="text-gray-300 mb-6 leading-relaxed">
             {project.description}
           </p>
+
           <h3 className="text-xl font-semibold mb-2">How It Works</h3>
           <p className="text-gray-400 mb-6 leading-relaxed">
             {project.howItWorks}
           </p>
+
           <div className="flex flex-wrap gap-2 mt-4">
             {project.tech.map((t) => (
               <span
@@ -53,6 +59,33 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 {t}
               </span>
             ))}
+          </div>
+
+          {/* ✅ GitHub & Video Buttons */}
+          <div className="flex flex-wrap gap-4 mt-8">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2 bg-gray-800 hover:bg-gray-700 rounded-full transition-all"
+              >
+                <Github size={18} />
+                <span>GitHub Repo</span>
+              </a>
+            )}
+
+            {project.video && (
+              <a
+                href={project.video}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2 bg-red-600 hover:bg-red-700 rounded-full transition-all"
+              >
+                <PlayCircle size={18} />
+                <span>Live Demo / Video</span>
+              </a>
+            )}
           </div>
         </motion.div>
       </motion.div>

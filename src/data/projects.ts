@@ -18,7 +18,7 @@ export const projects: Project[] = [
     thumbnail: "/images/ticket-support.jpg",
     tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
     github: "https://github.com/Salonii2004/Support_Ticket_System",
-    video: "/videos/ticket-support.mp4",
+    video: "https://youtu.be/CjSuh40uMns",
     description:
       "A web-based ticketing system designed for customer support teams to manage and resolve user issues efficiently.",
     howItWorks:
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     thumbnail: "/images/blog-app.jpg",
     tech: ["Flask", "SQLite", "HTML", "CSS", "JavaScript", "Flask-Login", "Jinja2"],
     github: "https://github.com/Salonii2004/Blog_WebApp",
-    video: "/videos/blog-demo.mp4",
+    video: "https://youtu.be/VL0D5s0NxJ4",
     description:
       "A personal blogging platform where users can create, edit, and delete blog posts with user authentication support.",
     howItWorks:
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     thumbnail: "/images/timezone-converter.jpg",
     tech: ["React", "TypeScript", "TailwindCSS", "Moment.js"],
     github: "https://github.com/Salonii2004/timezone-converter",
-    video: "/videos/timezone-demo.mp4",
+    video: "https://youtu.be/mEMxHsmo2gc",
     description:
       "A responsive time zone converter app that allows users to compare time across multiple cities with live synchronization.",
     howItWorks:
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     thumbnail: "/images/streamlit-dashboard.jpg",
     tech: ["Python", "Streamlit", "Pandas", "Matplotlib"],
     github: "https://github.com/saloni/streamlit-dashboard",
-    video: "/videos/streamlit-dashboard.mp4",
+    video: "https://youtu.be/UFcq8GY_36w",
     description:
       "An interactive dashboard that visualizes superstore sales and performance metrics using Streamlit.",
     howItWorks:

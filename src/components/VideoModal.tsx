@@ -9,7 +9,7 @@ interface VideoModalProps {
 const VideoModal = ({ videoUrl, onClose }: VideoModalProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Close on ESC
+  // 🔹 Close modal on ESC key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -18,12 +18,27 @@ const VideoModal = ({ videoUrl, onClose }: VideoModalProps) => {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [onClose]);
 
-  // Pause when closed
+  // 🔹 Pause video when closing
   useEffect(() => {
     if (!videoUrl && videoRef.current) videoRef.current.pause();
   }, [videoUrl]);
 
   if (!videoUrl) return null;
+
+  // 🔹 Detect if it's a YouTube link
+  const isYouTube =
+    videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be");
+
+  // 🔹 Convert normal YouTube URLs to embeddable ones
+  const getEmbedUrl = (url: string) => {
+    if (url.includes("watch?v=")) {
+      return url.replace("watch?v=", "embed/");
+    } else if (url.includes("youtu.be/")) {
+      const id = url.split("youtu.be/")[1];
+      return `https://www.youtube.com/embed/${id}`;
+    }
+    return url;
+  };
 
   return (
     <AnimatePresence>
@@ -55,15 +70,24 @@ const VideoModal = ({ videoUrl, onClose }: VideoModalProps) => {
             ✕
           </button>
 
-          <video
-            ref={videoRef}
-            controls
-            autoPlay
-            className="w-full h-[480px] rounded-xl bg-black"
-          >
-            <source src={videoUrl} type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
+          {isYouTube ? (
+            <iframe
+              src={getEmbedUrl(videoUrl)}
+              className="w-full h-[480px] rounded-xl bg-black"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
+          ) : (
+            <video
+              ref={videoRef}
+              controls
+              autoPlay
+              className="w-full h-[480px] rounded-xl bg-black"
+            >
+              <source src={videoUrl} type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>
