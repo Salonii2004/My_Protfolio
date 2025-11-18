@@ -8,7 +8,7 @@ const Header = () => {
   const closeMobileMenu = () => setIsOpen(false);
 
   const resumeLink =
-    "https://drive.google.com/file/d/1RmRKJLOcHFCk6KaO32rJ3Hf44l1yQTUW/view?usp=sharing";
+    "https://drive.google.com/file/d/1IrbdO3xZ1DT2CcetCj7qf3COadOhd6y4/view?usp=drive_link";
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-lg border-b border-white/10">
