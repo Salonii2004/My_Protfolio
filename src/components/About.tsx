@@ -52,7 +52,7 @@ const About = () => {
             "I led a research project titled “Vehicle Detection, Classification & Counting Using Deep Learning” using YOLOv5, DeepSORT, and OpenCV — presented at SDSTD 2025 International Conference and accepted for publication.",
             "I graduated with a B.E. in Information Technology from G H Patel College of Engineering and Technology (GCET) with a CGPA of 8.9/10.",
             "I was an SSIP Hackathon 2023 Finalist for a school registration portal under the Government of Gujarat.",
-            "I built a social impact IoT wearable device that helped 50+ children with autism communicate better — in collaboration with Mittra Rehabilitation Trust.",
+            "I built a social impact IoT solution to enhance sensitivity and communication for 50+ children with autism  — in collaboration with Mittra Rehabilitation Trust.",
             "I love turning complex problems into elegant, scalable, and meaningful digital solutions."
           ].map((text, i) => (
             <motion.p
