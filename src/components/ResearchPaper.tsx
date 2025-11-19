@@ -91,7 +91,7 @@ const ResearchPaper = () => {
             {[
               { title: "Detection", tech: "YOLOv5", desc: "Ultra-fast multi-object detection" },
               { title: "Tracking", tech: "DeepSORT", desc: "Persistent ID assignment across frames" },
-              { title: "Counting", tech: "Custom Logic", desc: "Accurate entry/exit counting with virtual lines" },
+              { title: "Classification & Counting ", tech: "Custom Logic", desc: "Accurate entry/exit counting with virtual lines" },
             ].map((item, i) => (
               <motion.div
                 key={i}
