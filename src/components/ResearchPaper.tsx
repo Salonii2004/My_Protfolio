@@ -123,7 +123,7 @@ const ResearchPaper = () => {
             {[
               "92%+ Detection Accuracy",
               "Robust in Low Light & Rain",
-              "Real-time Performance (30+ FPS)",
+              "Real-time Performance (20+ FPS)",
               "Multi-class Classification",
               "Stable Tracking (DeepSORT)",
               "Accurate Counting Logic",
